@@ -13,7 +13,11 @@ services:
       - 3001:3001
       - 3002:3002
     depends_on:
-      - db
+            - db
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
     environment: &web-environment
       BUNDLE_PATH: /bundle_cache
       GEM_HOME: /bundle_cache
